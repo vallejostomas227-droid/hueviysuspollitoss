@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huevi y sus pollitos 🐣</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
+  background-size: 1400% 1400%;
+  animation: rainbow 15s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+@keyframes rainbow {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+header {
+  font-size: 26px;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.info {
+  margin: 20px;
+  font-size: 18px;
+}
+
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 20px;
+  width: 250px;
+  backdrop-filter: blur(10px);
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.precio {
+  font-size: 22px;
+  font-weight: bold;
+  color: yellow;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+</style>
+</head>
+
+<body>
+
+<header>🐣 Huevi y sus Pollitos 🍕</header>
+
+<div class="info">
+✨ Próximamente habrá imágenes de los productos ✨
+</div>
+
+<div class="productos">
+
+<div class="card">
+<h3>🍕 Prepizza + 100g paleta + 200g queso</h3>
+<p class="precio">$4000</p>
+<p>📦 Stock próximamente disponible (en proceso) 🚧</p>
+<button onclick="comprar('Prepizza + paleta + queso', 4000)">Comprar</button>
+</div>
+
+<div class="card">
+<h3>🍕 1 Prepizza + 200g de queso + 1 yogur</h3>
+<p class="precio">$4500</p>
+<p>📦 Stock próximamente disponible (en proceso) 🚧</p>
+<button onclick="comprar('Prepizza + queso + yogur', 4500)">Comprar</button>
+</div>
+
+<div class="card">
+<h3>🧃 Yogur Tregar Tops</h3>
+<p class="precio">$1400</p>
+<p>📦 Stock próximamente disponible (en proceso) 🚧</p>
+<button onclick="comprar('Yogur Tregar Tops', 1400)">Comprar</button>
+</div>
+
+</div>
+
+<script>
+function comprar(producto, precio) {
+  let numero = "541133905800";
+  let mensaje = `Hola! Vengo por ${producto} que está $${precio}`;
+  let url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
